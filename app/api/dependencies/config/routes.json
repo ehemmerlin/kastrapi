@@ -1,0 +1,60 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/dependencies",
+      "handler": "dependencies.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/dependencies/count",
+      "handler": "dependencies.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/dependencies/webhook",
+      "handler": "dependencies.webhook",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/dependencies/:url",
+      "handler": "dependencies.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/dependencies",
+      "handler": "dependencies.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/dependencies/:id",
+      "handler": "dependencies.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/dependencies/:id",
+      "handler": "dependencies.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

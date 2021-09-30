@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "dependencies",
+  "info": {
+    "name": "Dependencies",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "projects": {
+      "collection": "test",
+      "via": "dependency"
+    },
+    "branches": {
+      "collection": "branches",
+      "via": "dependency"
+    }
+  }
+}
