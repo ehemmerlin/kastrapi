@@ -1,9 +1,9 @@
 version: "3"
 
 services:
-  strapiexample:
+  app:
     image: strapi/strapi
-    container_name: strapiexample
+    container_name: app
     restart: unless-stopped
     env_file: .env
     environment:
@@ -13,10 +13,8 @@ services:
       DATABASE_PORT: ${DATABASE_PORT}
       DATABASE_USERNAME: ${DATABASE_USERNAME}
       DATABASE_PASSWORD: ${DATABASE_PASSWORD}
-    #    links:
-    #      - mongo:mongo
     networks:
-      - strapi-app-network
+      - bitbucket-webhook-network
     volumes:
       - ./app:/srv/app
     ports:
@@ -31,15 +29,15 @@ services:
       MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
       MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
     networks:
-      - strapi-app-network
+      - bitbucket-webhook-network
     volumes:
-      - strapidata:/data/db
+      - apidata:/data/db
     ports:
       - "27017:27017"
 
 networks:
-  strapi-app-network:
+  bitbucket-webhook-network:
     driver: bridge
 
 volumes:
-  strapidata:
+  apidata:
