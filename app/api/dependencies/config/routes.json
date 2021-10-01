@@ -19,7 +19,15 @@
     {
       "method": "GET",
       "path": "/dependencies/webhook",
-      "handler": "dependencies.webhook",
+      "handler": "dependencies.webhookGet",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/dependencies/webhook",
+      "handler": "dependencies.webhookPost",
       "config": {
         "policies": []
       }
