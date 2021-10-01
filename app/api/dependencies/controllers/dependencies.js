@@ -18,6 +18,12 @@ module.exports = {
     const { data } = await axios.get('http://bitbucket.plium.club:1337/dependencies/application');
 
     console.log(data);  
+
+    const projects = data.projects;
+        
+    for(project of projects) {
+          console.log(project);
+    }
     return "Received GET request. Check the console for more info.";
   },
   async webhookPost(ctx) {
