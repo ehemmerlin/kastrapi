@@ -43,12 +43,12 @@ module.exports = {
           }
         };
       
-      console.log("Call api");
+      console.log("Call api: "+ctx.request.body.pullRequest.fromRef.repository.slug);
       const { data } = axios.get('http://bitbucket.plium.club:1337/dependencies/'+ctx.request.body.pullRequest.fromRef.repository.slug);
 
       console.log(data);  
 
-      const projects = res.projects;
+      const projects = data.projects;
   
       for(project of projects) {
   
