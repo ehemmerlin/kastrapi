@@ -25,8 +25,8 @@ module.exports = {
     console.log("Request body:");
     console.log(ctx.request.body);
 
-    if (ctx.request.body.changes[0] && ctx.request.body.changes[0].type == "ADD" && ctx.request.body.changes[0].ref.type == "BRANCH") {
-        console.log("New branch created: "+ctx.request.body.changes[0].refId)
+    if (request.body.pullRequest && request.body.pullRequest.state == "OPEN" && request.body.pullRequest.open == true && request.body.pullRequest.closed == false) {
+        console.log("New pull request created: "+request.body.pullRequest.fromRef.id)
 
         const refId = ctx.request.body.changes[0].refId;
         const branch = refId.split('/')[2];
