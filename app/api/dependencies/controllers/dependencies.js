@@ -38,7 +38,7 @@ module.exports = {
           };
         
         console.log("Call api");
-        axios.get('https://bitbucket.plium.club:1337/dependencies/'+ctx.request.body.repository.slug)
+        axios.get('https://bitbucket.plium.club:1337/dependencies/'+ctx.request.body.fromRef.repository.slug)
           .then(res => {
             //const headerDate = res.headers && res.headers.date ? res.headers.date : 'no response date';
             //console.log('Status Code:', res.status);
