@@ -25,10 +25,10 @@ module.exports = {
     console.log("Request body:");
     console.log(ctx.request.body);
 
-    if (ctx.request.body.pullRequest && ctx.request.body.pullRequest.state == "OPEN" && ctx.request.body.pullRequest.open == true && ctx.request.body.pullRequest.closed == false) {
+    if (ctx.request.body.pullRequest && ctx.request.body.pullRequest.state == "MERGED" && ctx.request.body.pullRequest.open == false && ctx.request.body.pullRequest.closed == true) {
         console.log("New pull request created: "+ctx.request.body.pullRequest.fromRef.id)
 
-        const refId = ctx.request.body.changes[0].refId;
+        const refId = ctx.request.body.pullRequest.fromRef.id;
         const branch = refId.split('/')[2];
 
         let headerGet = {
