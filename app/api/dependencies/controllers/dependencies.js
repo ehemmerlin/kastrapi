@@ -25,8 +25,8 @@ module.exports = {
     console.log("Request body:");
     console.log(ctx.request.body);
 
-    if (request.body.pullRequest && request.body.pullRequest.state == "OPEN" && request.body.pullRequest.open == true && request.body.pullRequest.closed == false) {
-        console.log("New pull request created: "+request.body.pullRequest.fromRef.id)
+    if (ctx.request.body.pullRequest && ctx.request.body.pullctx.request.state == "OPEN" && ctx.request.body.pullctx.request.open == true && ctx.request.body.pullctx.request.closed == false) {
+        console.log("New pull request created: "+ctx.request.body.pullRequest.fromRef.id)
 
         const refId = ctx.request.body.changes[0].refId;
         const branch = refId.split('/')[2];
@@ -36,13 +36,15 @@ module.exports = {
                 'Authorization': 'Bearer ' + process.env.BITBUCKET_TOKEN
             }
           };
-    
+        
+        console.log("Call api");
         axios.get('https://app:1337/dependencies/'+ctx.request.body.repository.slug)
           .then(res => {
-            const headerDate = res.headers && res.headers.date ? res.headers.date : 'no response date';
-            console.log('Status Code:', res.status);
-            console.log('Date in Response header:', headerDate);
-        
+            //const headerDate = res.headers && res.headers.date ? res.headers.date : 'no response date';
+            //console.log('Status Code:', res.status);
+            //console.log('Date in Response header:', headerDate);
+            console.log("res"+res);
+
             const projects = res.data;
         
             for(project of projects) {
