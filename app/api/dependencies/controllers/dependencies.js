@@ -15,7 +15,7 @@ module.exports = {
     return sanitizeEntity(entity, { model: strapi.models.dependencies });
   },
   async webhookGet() {
-    const { data } = await axios.get('http://localhost:1337/dependencies/xcut');
+    const { data } = await axios.get('http://app:1337/dependencies/xcut');
 
     console.log(data);  
     return "Received GET request. Check the console for more info.";
