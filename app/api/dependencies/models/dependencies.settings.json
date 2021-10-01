@@ -22,8 +22,8 @@
       "type": "string"
     },
     "projects": {
-      "collection": "test",
-      "via": "dependency"
+      "via": "dependency",
+      "collection": "test"
     },
     "branches": {
       "collection": "branches",

@@ -18,6 +18,9 @@
     "dependency": {
       "via": "projects",
       "model": "dependencies"
+    },
+    "url": {
+      "type": "string"
     }
   }
 }
