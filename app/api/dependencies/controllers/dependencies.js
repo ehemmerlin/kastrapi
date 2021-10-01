@@ -44,7 +44,8 @@ module.exports = {
         };
       
       console.log("Call api: "+ctx.request.body.pullRequest.fromRef.repository.slug);
-      const { data } = axios.get('http://bitbucket.plium.club:1337/dependencies/'+ctx.request.body.pullRequest.fromRef.repository.slug);
+      //const { data } = axios.get('http://bitbucket.plium.club:1337/dependencies/'+ctx.request.body.pullRequest.fromRef.repository.slug);
+      const { data } = await axios.get('http://bitbucket.plium.club:1337/dependencies/application');
 
       console.log(data);  
 
