@@ -15,7 +15,7 @@ module.exports = {
     return sanitizeEntity(entity, { model: strapi.models.dependencies });
   },
   async webhookGet() {
-    const { data } = await axios.get('http://bitbucket.plium.club:1337/dependencies/xcut');
+    const { data } = await axios.get('http://bitbucket.plium.club:1337/dependencies/application');
 
     console.log(data);  
     return "Received GET request. Check the console for more info.";
