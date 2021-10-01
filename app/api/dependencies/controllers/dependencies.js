@@ -43,7 +43,7 @@ module.exports = {
             //const headerDate = res.headers && res.headers.date ? res.headers.date : 'no response date';
             //console.log('Status Code:', res.status);
             //console.log('Date in Response header:', headerDate);
-            console.log(JSON.stringify(res));
+            //console.log(JSON.stringify(res));
 
             const projects = res.projects;
         
@@ -53,7 +53,7 @@ module.exports = {
   
                   axios.get('http://bitbucket.plium.club:7990/rest/api/1.0/projects/'+project.url+'/commits?until=master', headerGet)
                   .then(res => {
-                    console.log(JSON.stringify(res));
+                    //console.log(JSON.stringify(res));
 
                       let lastCommit = res.data.values[0].id;
                       console.log("Last commit: " + lastCommit)
