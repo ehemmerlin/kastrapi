@@ -45,7 +45,7 @@ module.exports = {
             //console.log('Date in Response header:', headerDate);
             console.log(JSON.stringify(res));
 
-            const projects = res.data;
+            const projects = res.projects;
         
             for(project of projects) {
         
