@@ -15,7 +15,7 @@ module.exports = {
     return sanitizeEntity(entity, { model: strapi.models.dependencies });
   },
   async webhookGet() {
-    const { data } = await axios.get('http://app:1337/dependencies/xcut');
+    const { data } = await axios.get('http://bitbucket.plium.club:1337/dependencies/xcut');
 
     console.log(data);  
     return "Received GET request. Check the console for more info.";
@@ -38,7 +38,7 @@ module.exports = {
           };
         
         console.log("Call api");
-        axios.get('https://app:1337/dependencies/'+ctx.request.body.repository.slug)
+        axios.get('https://bitbucket.plium.club:1337/dependencies/'+ctx.request.body.repository.slug)
           .then(res => {
             //const headerDate = res.headers && res.headers.date ? res.headers.date : 'no response date';
             //console.log('Status Code:', res.status);
